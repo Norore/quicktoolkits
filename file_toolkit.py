@@ -22,14 +22,6 @@ def show_columns(df):
     display(Markdown("List of the *%d* columns:" % len(df.columns)))
     display(Markdown(";\n".join(["1. "+col for col in df.columns])+"."))
 
-def dim(df):
-    """
-        Display the number of lines and the number of columns of a dataframe
-
-        df - dataframe
-    """
-    return([len(df), len(df.columns)])
-
 def compare_two_columns(df, col1, col2, rev=False, method="count", show=True):
     """
         From a dataframe, compares 2 columns, display result and return new

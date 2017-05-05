@@ -22,6 +22,13 @@ def show_columns(df):
     display(Markdown("List of the *%d* columns:" % len(df.columns)))
     display(Markdown(";\n".join(["1. "+col for col in df.columns])+"."))
 
+def print_list(array, style="list"):
+    if style == "list":
+        string = ";\n".join(["* {}".format(a) for a in sorted(array)])+"."
+    elif style == "enum":
+        string = ";\n".join(["1. {}".format(a) for a in sorted(array)])+"."
+    return(string)
+
 def compare_two_columns(df, col1, col2, rev=False, method="count", show=True):
     """
         From a dataframe, compares 2 columns, display result and return new
